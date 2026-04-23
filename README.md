@@ -1,0 +1,6 @@
+
+This Deep Learning project has been developed using TensorFlow and Keras, implementing a stacked LSTM (Long Short-Term Memory) model for time-series forecasting of Apple Inc. (AAPL) stock closing prices. Historical data spanning 2015 to 2023 was sourced using the `yfinance` API. The dataset was split into 80% training and 20% testing sets, and a `MinMaxScaler` was applied exclusively on training data to avoid data leakage before transforming the test set.
+
+A sliding window of 60 timesteps was used to create input sequences, with each sequence predicting the next day's closing price. The LSTM architecture consists of two stacked LSTM layers of 50 units each, with Dropout layers of 0.2 after each to reduce overfitting, followed by a Dense output layer. The model was compiled with the Adam optimizer and Mean Squared Error loss function, and trained over 10 epochs with a batch size of 32.
+
+Model performance was evaluated on both training and test sets using RMSE, MAE, and R² metrics. Using `matplotlib`, graphs were plotted to visualize predicted vs. actual closing prices for both splits, enabling clear assessment of model fit. The predictions were inverse-transformed back to the original price scale for interpretability. The model demonstrates strong predictive performance, closely tracking real AAPL price movements across the test period.
